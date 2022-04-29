@@ -1,0 +1,8 @@
+0,1
+model_type,CAT
+learning_rate,0.0932313722497619
+max_depth,15
+reg_lambda,0.0443516986474809
+subsample,0.9012856259839683
+min_child_samples,99
+scale_pos_weight,0.1657954162533829

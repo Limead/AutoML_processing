@@ -1,0 +1,13 @@
+{   
+    "MODEL_TYPE" : "classification",
+    "DATA_TYPE" : "file" ,
+    "TRAIN_TABLE" : "train.csv",
+    "TEST_TABLE" : "test.csv",
+    "TARGET" : "Survived",
+    "KEY_COLS" : ["PassengerId"],
+    "SQL_TRAIN_COLS" : [
+        "var1",
+        "var2",
+        "var3"
+    ]
+}
