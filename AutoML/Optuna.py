@@ -248,7 +248,7 @@ if __name__ == '__main__':
         )
         ### Optuna Run ###
 
-        study.optimize(lambda trial : objective(train_x, valid_x, train_y, valid_y, MODEL_PREDICTION_TYPE, cat_vars, trial), n_trials = 3)
+        study.optimize(lambda trial : objective(train_x, valid_x, train_y, valid_y, MODEL_PREDICTION_TYPE, cat_vars, trial), n_trials = 50)
         ### final output log ###
         log.info(f'Best Score : {study.best_value}')
         log.info(f'Best Trial : {study.best_trial.params}')
