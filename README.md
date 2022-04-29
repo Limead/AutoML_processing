@@ -16,7 +16,7 @@ For detailed code, let's assume that you can check it out for yourself and revie
 
 You must define the dataset to use.
 
-It is configured to set and use various factors in json format inside the "utiles/setting.json" file in the script.
+It is configured to set and use various factors in json format inside the "Utiles/setting.json" file in the script.
 
 
 - MODEL_TYPE : Value for setting classification or regression - [classification, regression ]
