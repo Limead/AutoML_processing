@@ -3,10 +3,9 @@ import numpy as np
 import json
 from datetime import datetime
 
-# 배치 기준년월 계산
 date = datetime.today().strftime('%Y%m')
 
-with open(f'Utils/query.json','r') as f:
+with open(f'Utils/setting.json','r') as f:
     json_data = json.load(f)
     train_cols = ','.join(json_data['SQL_TRAIN_COLS'])
     key_cols = ','.join(json_data['KEY_COLS'])
@@ -18,7 +17,7 @@ with open(f'Utils/query.json','r') as f:
     
     KEYS = json_data['KEY_COLS']
     
-    ## SQL 쿼리로 데이터 select 시
+    ## SQL 
     if DATA_TYPE == 'SQL': 
         SQL_TRAIN = f""" 
                          SELECT {key_cols},{train_cols},{target}
@@ -30,7 +29,7 @@ with open(f'Utils/query.json','r') as f:
                             SELECT {key_cols},{train_cols}
                             FROM {test_table_name}
                        """
-    ## 일반 데이터파일 load 시
+    ## file
     elif DATA_TYPE == 'file':
         READ_TRAIN_INFO = f'{train_table_name}'
         
