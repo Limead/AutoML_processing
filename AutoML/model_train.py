@@ -20,7 +20,7 @@ from Utils.dataloader import *
 from ML_Model.train_model import *
 from ML_preprocessing.preprocessing import *
 
-## 구동코드 XGB : python3 model_train.py -target <>
+##python3 model_train.py
 
 if __name__ == '__main__':
     warnings.filterwarnings('ignore')
@@ -33,10 +33,9 @@ if __name__ == '__main__':
 
     #### data load ####
     
-    ## sybase DB 연결 시 connect 설정 - 타 DB 연결 시 수정사용 가능
     #     conn = jaydebeapi.connect('com.sybase.jdbc4.jdbc.SybDriver',
-    #                           'jdbc:sybase:Tds:10.150.1.75:2639/PDWQDBS2',
-    #                           {'user':'ㅁㅁㅁ','password':'ㅁㅁㅁ'},
+    #                           'jdbc:sybase:Tds:10.150.1.75:',
+    #                           {'user':'aaa','password':'aaa'},
     #                           "/app/ml/jconn4.jar")
     #     conn.jconn.setAutoCommit(True)
     #     curs = conn.cursor()
