@@ -16,10 +16,9 @@ from Utils.logger import Logger
 from Utils.utils import *
 
 def Data_cleaning(data, target, log, prediction_type, cat_vars, processing=False):
-    #### 모델 학습 전 데이터 클리닝 ####
+
     
     if processing:
-        # 전처리 후 마지막 데이터 결측치 0 대체
         NA_cols = [col if data[col].isnull().sum() != 0 else 'N' for col in data]
         NA_cols = list(set(NA_cols) - set(cat_vars))
         NA_cols.remove('N')
@@ -31,7 +30,6 @@ def Data_cleaning(data, target, log, prediction_type, cat_vars, processing=False
         
         return data
     else:
-        # 전처리 후 마지막 데이터 결측치 0 대체
         NA_cols = [col if data[col].isnull().sum() != 0 else 'N' for col in data]
         NA_cols = list(set(NA_cols) - set(cat_vars))
         NA_cols.remove('N')
@@ -45,7 +43,6 @@ def Data_cleaning(data, target, log, prediction_type, cat_vars, processing=False
         y_data = data[target]
         
         if prediction_type=='classification':
-        # data 학습, 검증 셋 분리
             train_x, valid_x, train_y, valid_y = train_test_split(x_data, y_data, test_size=0.3, stratify = y_data, random_state=123)
         elif prediction_type=='regression':
             train_x, valid_x, train_y, valid_y = train_test_split(x_data, y_data, test_size=0.3, random_state=123)
@@ -58,7 +55,7 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
     if model_type == "XGB":
         train_x = train_x.drop(columns=cat_vars)
         valid_x = valid_x.drop(columns=cat_vars)
-    # Optuna를 통해 최적화한 Parameter set loading
+    # Parameter set loading
     if prediction_type=='classification':
         try:
             Params = pd.read_csv(f'ML_Tuning/Best_Params_{target_name}.csv')
