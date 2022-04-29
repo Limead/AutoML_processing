@@ -24,7 +24,7 @@ from ML_Model.train_model import *
 from ML_preprocessing.preprocessing import *
 
 
-## 구동코드 : python3 Optuna.py -target <>
+##python3 Optuna.py
 
 if __name__ == '__main__':
     warnings.filterwarnings('ignore')
@@ -33,12 +33,11 @@ if __name__ == '__main__':
 
     log = Logger("Model_log")
 
-    #### data load ####
-    
-    ## sybase DB 연결 시 connect 설정 - 타 DB 연결 시 수정사용 가능
+     #### data load ####
+
     #     conn = jaydebeapi.connect('com.sybase.jdbc4.jdbc.SybDriver',
-    #                           'jdbc:sybase:Tds:10.150.1.75:2639/PDWQDBS2',
-    #                           {'user':'ㅁㅁㅁ','password':'ㅁㅁㅁ'},
+    #                           'jdbc:sybase:Tds:10.150.1.75:',
+    #                           {'user':'aaa','password':'aaa'},
     #                           "/app/ml/jconn4.jar")
     #     conn.jconn.setAutoCommit(True)
     #     curs = conn.cursor()
@@ -75,9 +74,9 @@ if __name__ == '__main__':
     except Exception as e:
         log.error(f'{e} : {target_name} opt data cleaning error')
     else:
-        log.info(f'finish data cleaning : {target_name} opt')        
-    ### Optuna로 최적화 할 objective 함수 작성  ###
-    ## trial.suggest~ 함수로 최적화 값을 할당하고 최종 return 값을 원하는 방향으로 최적화 함
+        log.info(f'finish data cleaning : {target_name} opt')  
+        
+    ### Optuna objective function  ###
     def objective(X_train, X_valid, y_train, y_valid, prediction_type, cat_vars, trial : Trial) -> float :
         model_type = trial.suggest_categorical('model_type', ['XGB', 'LGB', 'CAT'])
         
@@ -244,11 +243,10 @@ if __name__ == '__main__':
         sampler = TPESampler()
         study = optuna.create_study(
         study_name = 'parameter_opt',
-        direction = 'maximize', # 스코어 최대화
+        direction = 'maximize', 
         sampler = sampler
         )
         ### Optuna Run ###
-
 
         study.optimize(lambda trial : objective(train_x, valid_x, train_y, valid_y, MODEL_PREDICTION_TYPE, cat_vars, trial), n_trials = 3)
         ### final output log ###
