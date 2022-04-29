@@ -21,20 +21,20 @@ from Utils.utils import *
 
 
 def Model_processing(data, log, model_type, prediction_type, target_name, key_data):
-    ### 모델 load
+
     loaded_model = joblib.load(open(f'ML_Model/saved_model/{model_type}_{target_name}_model.pkl', 'rb'))
 
     if prediction_type=='classification':
-        ### 해촉확률 예측 
+
         pred_prob = loaded_model.predict_proba(data)[:, 1]
 
     elif prediction_type=='regression':
         pred_prob = loaded_model.predict(data)
         
-    #### 최종 아웃풋 # 
+
     data['model_prediction'] = pred_prob
     
     data = pd.concat([key_data,data], axis=1)
-    ## data 파일 저장 방식
-    data.to_csv(f'ML_result/final_{target_name}.csv', index=False, encoding='euc-kr')
+
+    data.to_csv(f'ML_result/final_{target_name}.csv', index=False)
     
