@@ -33,7 +33,6 @@ tree기반 한정으로 AutoML 구조와 유사하게 최소한의 데이터 설
 
 1. 알고리즘 선택 및 튜닝
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/911258ee-5431-4068-9597-c456ad86155d/Untitled.png)
 
 터미널에서 python [Optuna.py](http://Optuna.py) 명령어로 Optuna를 실행시켜 알고리즘 선택 및 튜닝을 진행합니다.
 
@@ -47,15 +46,12 @@ Optuna 인자에 XGBoost, LightGBM, CatBoost 선택 항목을 추가하여 3가�
 
 - Importance plot
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95db78c3-95d9-433f-9a02-8ae10d997292/Untitled.png)
 
 - ROC curve
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fd3d6ed0-609d-4742-80da-c12212e64ee6/Untitled.png)
 
 - SHAP plot
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae95eca2-a0d0-489d-b707-2498fbe770df/Untitled.png)
 
 1. 모델 적용
 
@@ -63,7 +59,6 @@ Optuna 인자에 XGBoost, LightGBM, CatBoost 선택 항목을 추가하여 3가�
 
 예측이 완료되면 ML_result 폴더에 최종 output 파일이 생성되며 test 데이터에 모델 예측값이 추가된 형태의 데이터가 생성됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2f10083e-3b5f-4e3b-baca-c0e82166cb09/Untitled.png)
 
 # 🌈 Reference
 
@@ -73,12 +68,12 @@ Optuna 인자에 XGBoost, LightGBM, CatBoost 선택 항목을 추가하여 3가�
     - linux python 3.6
     - package list
     
-    alembic               1.7.7
-    attrs                 21.4.0
-    autopage              0.5.0
-    backcall              0.2.0
-    bayesian-optimization 1.2.0
-    catboost              1.0.4
+    alembic               1.7.7  
+    attrs                 21.4.0  
+    autopage              0.5.0  
+    backcall              0.2.0  
+    bayesian-optimization 1.2.0  
+    catboost              1.0.4  
     certifi               2016.9.26
     charset-normalizer    2.0.12
     cliff                 3.10.1
