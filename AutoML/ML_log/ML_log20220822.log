@@ -1,0 +1,15 @@
+[2022-08-22 09:55:37,963|INFO|model_train.py:49] train.csv load
+[2022-08-22 09:55:37,968|INFO|model_train.py:53] target Survived : 38.4%
+[2022-08-22 09:55:37,968|INFO|model_train.py:57] load Dataset : Survived opt
+[2022-08-22 09:55:37,968|INFO|model_train.py:58] data shape : (891, 12)
+[2022-08-22 09:55:37,969|INFO|preprocessing.py:24]  target drop : (891, 11)
+[2022-08-22 09:55:37,970|INFO|preprocessing.py:33] key drop : (891, 10)
+[2022-08-22 09:55:37,975|INFO|preprocessing.py:43] processing category feature : (891, 10)
+[2022-08-22 09:55:37,976|INFO|model_train.py:66] finish preprocessing : Survived
+[2022-08-22 09:55:37,980|INFO|train_model.py:40] processing_NA_cols : (891, 11)
+[2022-08-22 09:55:37,984|INFO|model_train.py:75] finish data cleaning : Survived
+[2022-08-22 09:55:39,434|INFO|train_model.py:111] Accuracy : 0.8246268656716418 / train : 0.9085072231139647
+[2022-08-22 09:55:39,438|INFO|train_model.py:112] AUC Score : 0.8751103265666372 / train : 0.9789596408647141
+[2022-08-22 09:55:39,442|INFO|train_model.py:113] F1 Score : 0.7539267015706808 / train : 0.8779443254817988
+[2022-08-22 09:55:39,737|INFO|train_model.py:130] AUC P-R : 0.8503940436016113 / train : 0.9672089128338107
+[2022-08-22 09:55:40,196|INFO|model_train.py:83] finish model training : Survived
