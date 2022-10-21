@@ -48,7 +48,10 @@ if __name__ == '__main__':
             data = pd_sql.read_sql(read_sql, conn, index_col=None)
         else:
             log.info(f"{READ_TRAIN_INFO} load")
-            data = pd.read_csv(f"{READ_TEST_INFO}")
+            try:
+                data = pd.read_csv(f"{READ_TRAIN_INFO}")
+            except:
+                data = pd.read_excel(f"{READ_TRAIN_INFO}")
     except Exception as e:
         log.error(f'{target_name} opt data load error : {e}')
     else:
