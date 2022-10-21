@@ -26,9 +26,12 @@ if __name__ == '__main__':
     warnings.filterwarnings('ignore')
     target_name = TARGET
     dataset = DATA_TYPE
-    Params = pd.read_csv(f'ML_Tuning/Best_Params_{target_name}.csv')
-    Params = Params.set_index('0').to_dict()['1']
-    model_type = Params['model_type']
+    try:
+        Params = pd.read_csv(f'ML_Tuning/Best_Params_{target_name}.csv')
+        Params = Params.set_index('0').to_dict()['1']
+        model_type = Params['model_type']
+    except:
+        model_type = 'LGB'
     log = Logger("Model_log")
 
     #### data load ####
