@@ -22,8 +22,8 @@ It is configured to set and use various factors in json format inside the "Utile
 - MODEL_TYPE : Value for setting classification or regression - [classification, regression ]
 - DATA_TYPE : The value that sets the method for loading data - [SQL, file] 
     - When selecting the sql method, the db connect connection setting is required internally, and the variable list to select can be selected.
-- TRAIN_TABLE : Training dataset,  If SQL is selected, enter a table name for the from clause, if you selected a file, enter a file name along with the path.
-- TEST_TABLE : Testing dataset, If SQL is selected, enter a table name for the from clause, if you selected a file, enter a file name along with the path.
+- TRAIN_TABLE : Training dataset,  If SQL is selected, enter a table name for the from clause, if you selected a file, enter a csv file name along with the path.
+- TEST_TABLE : Testing dataset, If SQL is selected, enter a table name for the from clause, if you selected a file, enter a csv file name along with the path.
 - TARGET : Target variable name.
 - KEY_COLS : Enter a KEY variable, such as ID. These variables are excluded during learning.
 - SQL_TRAIN_COLS : When select the sql type, you can specify the variables for the data to be selected. You do not enter the target and key_cols variables for that value.
