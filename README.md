@@ -39,14 +39,17 @@ in the linux terminal, Run the command "python model_train.py" to train model
 After learning, you can check the importance plot, ROC curve, PR curve, SHAP plot, and csv file containing model score values within the "ML_result" folder.
 
 - Importance plot
+
 ![image](https://user-images.githubusercontent.com/97657857/165936059-6941a838-fa79-4705-84e0-018c6b14ad8e.png)
 
 
 - ROC curve
+
 ![image](https://user-images.githubusercontent.com/97657857/165936122-3c304790-e812-4fed-a15e-b54d70df75db.png)
 
 
 - SHAP plot
+
 ![image](https://user-images.githubusercontent.com/97657857/165936175-163ede4e-3e0f-4914-9495-0aeb4a5ec548.png)
 
 4. Apply Model
