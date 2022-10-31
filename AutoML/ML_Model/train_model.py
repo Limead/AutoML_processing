@@ -232,7 +232,10 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
     
     shap_plot = plt.figure(figsize=(15,6))
     if model_type == 'LGB':
-        shap.summary_plot(shap_values[1], valid_x, feature_names = valid_x.columns, show=False)
+        try:
+            shap.summary_plot(shap_values, valid_x, feature_names = valid_x.columns, show=False)
+        except:
+            shap.summary_plot(shap_values[1], valid_x, feature_names = valid_x.columns, show=False)
     else:
         shap.summary_plot(shap_values, valid_x, feature_names = valid_x.columns, show=False)
 
