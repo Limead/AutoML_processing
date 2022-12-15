@@ -60,7 +60,7 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
         try:
             Params = pd.read_csv(f'ML_Tuning/Best_Params_{target_name}.csv')
             Params = Params.set_index('0').to_dict()['1']
-            del Parmas['model_type']
+            del Params['model_type']
         except Exception as e:
             if model_type == 'LGB':
                 best_model = LGBMClassifier(
@@ -163,7 +163,7 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
         try:
             Params = pd.read_csv(f'ML_Tuning/Best_Params_{target_name}.csv')
             Params = Params.set_index('0').to_dict()['1']
-            del Parmas['model_type']
+            del Params['model_type']
         except Exception as e:
             if model_type == 'LGB':
                 best_model = LGBMRegressor(
