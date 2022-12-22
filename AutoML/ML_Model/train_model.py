@@ -96,6 +96,9 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
                                         random_state = 420)
                 best_model.fit(train_x, train_y, verbose=50, eval_set = [(valid_x, valid_y)], eval_metric = 'auc', early_stopping_rounds=100)
             elif model_type == 'CAT':
+                Params['learning_rate'] = float(Params['learning_rate'])
+                Params['reg_lambda'] = float(Params['reg_lambda'])
+                Params['subsample'] = float(Params['subsample'])
                 Params['min_child_samples'] = int(Params['min_child_samples'])
                 Params['max_depth'] = int(Params['max_depth'])
                 best_model = CatBoostClassifier( ** Params,
@@ -199,6 +202,9 @@ def Model_train(train_x, train_y, valid_x, valid_y, log, model_type, prediction_
                                         random_state = 420)
                 best_model.fit(train_x, train_y, verbose=50, eval_set = [(valid_x, valid_y)], eval_metric = 'rmse', early_stopping_rounds=100)
             elif model_type == 'CAT':
+                Params['learning_rate'] = float(Params['learning_rate'])
+                Params['reg_lambda'] = float(Params['reg_lambda'])
+                Params['subsample'] = float(Params['subsample'])
                 Params['min_child_samples'] = int(Params['min_child_samples'])
                 Params['max_depth'] = int(Params['max_depth'])
                 best_model = CatBoostRegressor( ** Params,
